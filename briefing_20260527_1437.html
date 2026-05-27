@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Desk Briefing — SPY / QQQ / VIX — 2026-05-27 14:37 (Ad-hoc)</title>
+<style>
+  :root{
+    --navy:#0b1f3a; --navy2:#13294b; --gold:#c9a227; --gold2:#e6c976;
+    --ink:#1a2230; --paper:#f7f5ef; --line:#d8d2c2; --muted:#6a7280;
+    --bull:#1f7a4d; --bear:#a3282b; --neutral:#8a6d1f;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;line-height:1.5;font-size:15px;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 0 60px;background:#fff;
+    box-shadow:0 0 40px rgba(0,0,0,.08);}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:#fff;padding:28px 40px;border-bottom:4px solid var(--gold);}
+  header .firm{font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold2);font-family:Arial,Helvetica,sans-serif;}
+  header h1{margin:6px 0 2px;font-size:25px;font-weight:600;letter-spacing:.5px;}
+  header .sub{font-size:13px;color:#c9d2e0;font-family:Arial,Helvetica,sans-serif;}
+  .stamp{display:inline-block;margin-top:10px;background:var(--gold);color:var(--navy);
+    font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:2px;}
+  .stamp.adhoc{background:#b7472a;color:#fff;}
+  section{padding:24px 40px;border-bottom:1px solid var(--line);}
+  h2{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--navy);border-left:4px solid var(--gold);
+    padding-left:12px;margin:0 0 16px;}
+  h3{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--navy);margin:22px 0 6px;}
+  .exec{background:var(--navy);color:#eef2f8;border:none;border-top:3px solid var(--gold);}
+  .exec h2{color:var(--gold2);border-left-color:var(--gold);}
+  .exec p{margin:8px 0;}
+  .exec .call{font-size:17px;font-weight:600;color:#fff;}
+  .exec .call b{color:var(--gold2);}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);
+    vertical-align:top;}
+  th{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--muted);background:#faf8f2;}
+  tbody tr:nth-child(even){background:#fbfaf6;}
+  td.lbl{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--muted);width:120px;background:#faf8f2;}
+  .tag{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10px;
+    font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;
+    border-radius:10px;color:#fff;}
+  .bull{background:var(--bull);} .bear{background:var(--bear);} .neutral{background:var(--neutral);}
+  .conf{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;
+    letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid;}
+  .c-high{color:var(--bull);border-color:var(--bull);background:#eaf5ef;}
+  .c-mod{color:var(--neutral);border-color:var(--neutral);background:#fbf4dd;}
+  .c-low{color:var(--muted);border-color:var(--muted);background:#f0f0f0;}
+  ul{margin:6px 0 6px 0;padding-left:20px;}
+  li{margin:8px 0;}
+  .lvl{font-family:"Courier New",monospace;font-weight:700;}
+  .step{border-left:3px solid var(--gold);padding:10px 14px;margin:12px 0;background:#faf8f2;}
+  .step .hd{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:13px;
+    color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .note{font-size:12px;color:var(--muted);font-style:italic;}
+  .warn{background:#fbf0ec;border-left:3px solid #b7472a;padding:10px 14px;margin:12px 0;font-size:13px;}
+  .ladder{display:flex;gap:0;margin:14px 0 4px;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .ladder .cell{flex:1;padding:10px 8px;text-align:center;border-right:1px solid var(--line);font-family:Arial,Helvetica,sans-serif;}
+  .ladder .cell:last-child{border-right:none;}
+  .ladder .tf{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+  .ladder .rv{font-size:20px;font-weight:700;margin:3px 0;}
+  .ladder .rl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+  .r-stress{background:#fbeceb;} .r-stress .rv{color:var(--bear);}
+  .r-soft{background:#fbf4ed;} .r-soft .rv{color:#b06a1f;}
+  .r-trans{background:#fbf8ec;} .r-trans .rv{color:var(--neutral);}
+  .r-on{background:#eef6f0;} .r-on .rv{color:var(--bull);}
+  footer{padding:20px 40px;font-size:11px;color:var(--muted);
+    font-family:Arial,Helvetica,sans-serif;line-height:1.6;}
+  .pos{color:var(--bull);font-weight:700;} .neg{color:var(--bear);font-weight:700;}
+  .gw{font-family:"Courier New",monospace;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="firm">Institutional Trading Desk &middot; Cross-Asset Research</div>
+  <h1>Multi-Timeframe Desk Briefing — SPY / QQQ / VIX</h1>
+  <div class="sub">Wednesday, May 27, 2026 &middot; 14:37 local &middot; Core index complex &middot; Live TradingView Desktop (CDP)</div>
+  <span class="stamp adhoc">Ad-hoc Run</span>
+</header>
+
+<section class="exec">
+  <h2>Executive Summary</h2>
+  <p class="call">Headline: <b>Long-term bull, but a narrow, short-term-stressed tape — fade the gamma pins, don't chase.</b> Price is bullish on every horizon (SPY 750.79, QQQ 730.73 above their structure; VIX 17.00 suppressed), yet the institutional regime engine — newly available this run — reads <b>STRESS (&minus;2) intraday, TRANSITION (0) daily, RISK-ON (+2) only at the weekly</b>. Both indices and VIX are pinned exactly on their 0DTE gamma walls (SPY 750, QQQ 730, VIX 17).</p>
+  <p>The decisive new signal is breadth. At the statistically robust <b>daily</b> horizon (confidence 92, DQ OK) the Sector Leadership Monitor shows <b>Technology as the lone clean leader (+10.35% 20D &alpha;, +22.74% 63D &alpha;, RS&nbsp;Z 3.48)</b> while <b>all ten other sectors are NEUTRAL, LAGGING or AVOID with a uniformly negative relative trend (&#9660;&#9660;)</b>. Breadth risk score is <b>&minus;0.61</b> despite 9/11 sectors above their 50-day. This is a textbook narrow melt-up: index price at highs, internals hollowing out. The intraday read is worse still — Regime &minus;2 STRESS with a credit-stress flag (&minus;0.80) and two active market conflicts.</p>
+  <p>Net: the weekly uptrend (11/11 sectors above 200-day) keeps the core long thesis alive, so this is <em>not</em> a sell signal. But the alignment that justified chasing has broken. Trade the pins (cap longs into 750/730), keep beta concentrated in <b>QQQ/tech</b> where the only real leadership lives, and carry a cheap hedge against the intraday stress. The walls are the map: SPY 750&rarr;756.31, fail to 746/745 then the <span class="lvl">739</span> flip; QQQ 730&rarr;734.71, fail to 719 then 715.91.</p>
+  <div class="warn">
+    <b>Data &amp; scope caveat.</b> The active "Azelea" layout this run carries the <b>Institutional Sector Leadership Monitor</b>, <b>MenthorQ Gamma (Intraday/EOD)</b> — now rendering <b>SPY, QQQ <em>and</em> VIX</b> levels — plus premarket/prior-day level studies. The <b>ELA Fractal Volatility Projector</b> is loaded on the layout but returned <b>no readable lines/labels/boxes/values</b> at any symbol or timeframe this run, so no ELA vol-projection bands are quoted (MenthorQ 1D&nbsp;Min/Max is used as the de-facto vol band instead). The <b>Moving Averages For All Timeframes</b> study also returned no extractable values this run, so explicit MA stacks are not quoted — trend is read from price action and the Monitor's &#9650;50D/&#9650;200D flags. Stan Alpha v3, the Breadth/Cross-Asset Cockpit, the Markov Regime Engine and the Choppiness Index named in the spec are <b>not on this layout</b>. The Sector Monitor is hard-keyed to <b>SPY</b>, so its regime/breadth read is market-wide and identical across the SPY/QQQ/VIX charts (it does not re-key to QQQ or VIX). Figures below are exactly as read; nothing is inferred where a dashboard returned blank.
+  </div>
+</section>
+
+<!-- ===================== REGIME LADDER ===================== -->
+<section>
+  <h2>Market Regime Ladder — Institutional Sector Leadership Monitor</h2>
+  <p class="note">Market-wide (SPY-keyed) regime score by chart timeframe. The engine recomputes per resolution — short horizons are stressed, the long horizon is risk-on. This is the spine of today's call.</p>
+  <div class="ladder">
+    <div class="cell r-stress"><div class="tf">15m Execution</div><div class="rv">&minus;2</div><div class="rl">Stress</div></div>
+    <div class="cell r-soft"><div class="tf">4H Short</div><div class="rv">&minus;1</div><div class="rl">Soft / Risk-off lean</div></div>
+    <div class="cell r-trans"><div class="tf">Daily Medium</div><div class="rv">0</div><div class="rl">Transition</div></div>
+    <div class="cell r-on"><div class="tf">Weekly Trend</div><div class="rv">+2</div><div class="rl">Risk-on</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>15m</th><th>4H</th><th>Daily (Conf 92)</th><th>Weekly (Conf 92)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="lbl">Regime label</td><td><span class="tag bear">Stress</span></td><td><span class="tag neutral">Soft</span></td><td><span class="tag neutral">Transition</span></td><td><span class="tag bull">Risk-on</span></td></tr>
+      <tr><td class="lbl">Leader</td><td>Tech 1.33 (Med 64)</td><td>2.51 (60)</td><td><b>Tech 2.34 (High 92)</b></td><td>2.54 (92)</td></tr>
+      <tr><td class="lbl">Breadth risk</td><td class="neg">&minus;0.32</td><td class="pos">+0.34</td><td class="neg">&minus;0.61</td><td class="pos">+0.35</td></tr>
+      <tr><td class="lbl">Credit risk</td><td class="neg">&minus;0.80</td><td>&minus;0.04</td><td class="pos">+1.56</td><td class="pos">+0.70</td></tr>
+      <tr><td class="lbl">Dollar / Rates</td><td>+0.50 / &minus;0.30</td><td>&minus;1.73 / +0.43</td><td>&minus;0.59 / +0.13</td><td>&minus;0.74 / &minus;0.67</td></tr>
+      <tr><td class="lbl">Global growth</td><td>+0.17</td><td class="neg">&minus;0.96</td><td class="pos">+1.86</td><td class="pos">+1.87</td></tr>
+      <tr><td class="lbl">Sectors &gt;50D / &gt;200D</td><td>6/11 / 8/11</td><td>6/11 / 7/11</td><td>9/11 / 10/11</td><td>10/11 / <b>11/11</b></td></tr>
+      <tr><td class="lbl">Conflicts</td><td><b>2</b> — credit stress; cyclical bounce in weak regime</td><td>1</td><td>0</td><td>0</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>Daily sector tape (the tell):</b> Technology LEADER (&#9650;&#9650; abs &amp; rel trend, industry-confirmed). Every other sector — Real Estate, Energy, Industrials, Discretionary, Staples, Communications, Materials, Healthcare, Financials, Utilities — is NEUTRAL / LAGGING / AVOID with relative trend <b>&#9660;&#9660;</b>. Defensives (Utilities AVOID &minus;1.33, Staples LAGGING &minus;0.69, Healthcare &minus;0.85) are <em>also</em> lagging — "defensive lag; no hedge bid," i.e. no rotation safety net underneath. Leadership is concentrated to a single sector.</p>
+</section>
+
+<!-- ===================== SPY ===================== -->
+<section>
+  <h2>SPY — State Street SPDR S&amp;P 500 ETF &middot; Last 750.79</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Price bias</td>
+        <td><span class="tag bull">Bullish — pinned 750</span></td>
+        <td><span class="tag bull">Bullish</span></td>
+        <td><span class="tag bull">Uptrend</span></td>
+        <td><span class="tag bull">Strong uptrend</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Regime overlay</td>
+        <td><span class="tag bear">Stress &minus;2</span></td>
+        <td><span class="tag neutral">Soft &minus;1</span></td>
+        <td><span class="tag neutral">Transition 0</span></td>
+        <td><span class="tag bull">Risk-on +2</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>O750.46 H751.00 L749.61 C750.79; sitting on 750 wall</td>
+        <td>30-bar range <span class="lvl">731.54&ndash;752.12</span>, +0.21%, near top</td>
+        <td>5d climb 733.73&rarr;741.25&rarr;742.72&rarr;745.64&rarr;750.59 (<b>+2.15%</b>)</td>
+        <td>4wk closes 737.62&rarr;739.17&rarr;745.64&rarr;750.59 (<b>+4.24%</b>); high 752.13</td>
+      </tr>
+      <tr>
+        <td class="lbl">Gamma walls<br>(MenthorQ 15m)</td>
+        <td colspan="1" class="gw">
+          1D Max <span class="lvl">756.31</span><br>
+          GEX1 <span class="lvl">755</span> &middot; GEX4 <span class="lvl">751</span><br>
+          <b>Call Res / Gamma Wall 0DTE <span class="lvl">750.00</span></b> &larr; price<br>
+          GEX2 749 &middot; GEX3 748 &middot; GEX5 747<br>
+          HVL 0DTE <span class="lvl">746</span> &middot; Put Supp 0DTE <span class="lvl">745</span><br>
+          1D Min <span class="lvl">743.11</span><br>
+          HVL flip <span class="lvl">739</span> &middot; Put Support <span class="lvl">730</span>
+        </td>
+        <td colspan="3" class="note">MenthorQ gamma is an intraday/EOD study — renders only at 15m (identical line-set confirmed across the sweep). ELA vol bands: loaded but produced no readable output at any timeframe. SPX-translated mirror also rendered (1D 743.09&ndash;756.24, wall 748.28).</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PM H/L <span class="lvl">751.67 / 748.68</span>; PDH/PDL <span class="lvl">748.94 / 744.48</span></td>
+        <td>4H high <span class="lvl">752.12</span></td>
+        <td>Daily range <span class="lvl">731.53&ndash;752.13</span></td>
+        <td>4wk range <span class="lvl">714.99&ndash;752.13</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Breadth / credit</td>
+        <td>Breadth &minus;0.32; <b>credit stress &minus;0.80</b></td>
+        <td>Breadth +0.34; credit &minus;0.04</td>
+        <td>Breadth <b>&minus;0.61</b>; credit +1.56</td>
+        <td>Breadth +0.35; credit +0.70; 11/11 &gt;200D</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: SPY is structurally long on all horizons and the broad-index uptrend is intact at the weekly (100% of sectors above their 200-day). But the same engine flags daily breadth deteriorating (&minus;0.61) and an intraday STRESS regime with credit stress. The 750.00 0DTE call/gamma wall is the immediate governor — decision band 750&ndash;751.67. Through 751.67 &rarr; 756.31 magnet; rejected &rarr; 746/745, then the <span class="lvl">739</span> HVL flip is the structural line.</p>
+</section>
+
+<!-- ===================== QQQ ===================== -->
+<section>
+  <h2>QQQ — Invesco QQQ Trust &middot; Last 730.73</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Price bias</td>
+        <td><span class="tag bull">Bullish — pinned 730</span></td>
+        <td><span class="tag bull">Bullish</span></td>
+        <td><span class="tag bull">Uptrend (leader)</span></td>
+        <td><span class="tag bull">Strong uptrend</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Regime overlay</td>
+        <td colspan="4" class="note">Same market-wide ladder as SPY (Monitor is SPY-keyed): 15m Stress &minus;2 &rarr; 4H Soft &minus;1 &rarr; Daily Transition 0 &rarr; Weekly Risk-on +2. QQQ <b>is</b> the leadership vehicle — Technology is the only clean LEADER, and QQQ's +8.24%/4wk vs SPY +4.24% quantifies it.</td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>730.73; broke &amp; holds above PDH 722.12 &amp; PM-high 726.65</td>
+        <td>30-bar range <span class="lvl">695.26&ndash;731.17</span>, +1.29%, at top</td>
+        <td>5d climb 701.53&rarr;713.15&rarr;714.51&rarr;717.54&rarr;730.28 (<b>+4.35%</b>)</td>
+        <td>4wk closes 711.23&rarr;708.93&rarr;717.54&rarr;730.28 (<b>+8.24%</b>)</td>
+      </tr>
+      <tr>
+        <td class="lbl">Gamma walls<br>(MenthorQ 15m)<br><span class="note">NEW this run</span></td>
+        <td colspan="1" class="gw">
+          1D Max <span class="lvl">734.71</span><br>
+          <b>Call Res / Gamma Wall 0DTE <span class="lvl">730.00</span></b> &larr; price<br>
+          GEX3 729 &middot; GEX5 727 &middot; GEX1 725<br>
+          GEX4 724 &middot; GEX2 720<br>
+          HVL 0DTE <span class="lvl">719</span><br>
+          1D Min <span class="lvl">715.91</span> &middot; HVL <span class="lvl">715</span><br>
+          Put Supp 0DTE <span class="lvl">710</span> &middot; Put Support <span class="lvl">705</span>
+        </td>
+        <td colspan="3" class="note">MenthorQ now renders QQQ-native gamma (it did <b>not</b> at the 14:25 run). Expected 1D band <span class="lvl">715.91&ndash;734.71</span>. ELA vol bands not available.</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PM H/L <span class="lvl">726.65 / 721.18</span>; PDH/PDL <span class="lvl">722.12 / 715.95</span></td>
+        <td>4H high <span class="lvl">731.17</span></td>
+        <td>Daily range <span class="lvl">695.25&ndash;731.17</span></td>
+        <td>4wk range <span class="lvl">668.90&ndash;731.17</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: QQQ is the only place leadership actually lives, and it sits exactly on its 730.00 0DTE call/gamma wall with the 1D-Max at 734.71. Former resistance 726.65 / 722.12 is now the support shelf. The leadership is genuine but lonely — that is the entire bull case <em>and</em> the entire risk in one ticker.</p>
+</section>
+
+<!-- ===================== VIX ===================== -->
+<section>
+  <h2>VIX — CBOE Volatility Index (S&amp;P 500) &middot; Last 17.00</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Vol bias</td>
+        <td><span class="tag neutral">Benign — pinned 17</span></td>
+        <td><span class="tag bull">Vol downtrend</span></td>
+        <td><span class="tag bull">Vol downtrend</span></td>
+        <td><span class="tag neutral">Suppressed / range</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>15m range 16.77&ndash;17.23 (+1.19%); mild firm into close</td>
+        <td>30-bar range 16.46&ndash;19.44 (&minus;4.97%)</td>
+        <td>5d 18.05&rarr;17.43&rarr;16.75&rarr;16.71&rarr;17.00 (&minus;5.61%)</td>
+        <td>4wk 17.18&rarr;18.42&rarr;16.71&rarr;17.00 (&minus;2.19%)</td>
+      </tr>
+      <tr>
+        <td class="lbl">Gamma walls<br>(MenthorQ 15m)<br><span class="note">NEW this run</span></td>
+        <td colspan="1" class="gw">
+          Call Resistance <span class="lvl">25</span><br>
+          HVL <span class="lvl">20</span> &middot; GEX4 19<br>
+          1D Max <span class="lvl">18.14</span> &middot; GEX1 18 &middot; GEX3 17.5<br>
+          <b>Gamma Wall 0DTE <span class="lvl">17.00</span></b> &larr; price<br>
+          GEX2 16.5 &middot; Put/HVL 0DTE <span class="lvl">16</span><br>
+          1D Min <span class="lvl">15.54</span> &middot; GEX5 15
+        </td>
+        <td colspan="3" class="note">MenthorQ now computes a VIX gamma map. Expected 1D vol band <span class="lvl">15.54&ndash;18.14</span>. A push above 18.14 (1D Max) / 19.44 (4wk spike pivot) is the expansion trigger.</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PM H/L <span class="lvl">16.86 / 16.56</span></td>
+        <td>Spike pivot <span class="lvl">19.44</span></td>
+        <td>Band <span class="lvl">16.46&ndash;18.36</span></td>
+        <td>Band <span class="lvl">16.18&ndash;19.44</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: 17.00 is a complacent, low-vol regime — VIX bled &minus;5.61% over 5 days and is mid-range on the month. But two flickers: it ticked up into the close (16.71&rarr;17.00) and it sits exactly on its own 17.00 gamma wall with a 1D ceiling at 18.14. This is cheap insurance, not a short-vol invitation — especially given the equity-side breadth deterioration. First real risk-off tell: VIX reclaims and holds above 18.14, then 19.44.</p>
+</section>
+
+<!-- ===================== MATERIAL CHANGES ===================== -->
+<section>
+  <h2>Material Changes Since Last Briefing</h2>
+  <p class="note">Prior file on disk: <b>briefing_20260527_1425.html</b> (today, 14:25 — same SPY/QQQ/VIX mandate, 12 minutes earlier). That run's layout carried MenthorQ + a VIX Sentiment study but <b>not</b> the Sector Leadership Monitor or ELA, and it concluded the tape was "unambiguously bullish on every timeframe." This run's layout adds the Monitor, which changes the conclusion.</p>
+  <ul>
+    <li><b>Regime context is now available — and it is not "unambiguously bullish."</b> The Sector Leadership Monitor (absent at 14:25) reveals a regime ladder of <b>15m STRESS (&minus;2) &rarr; 4H Soft (&minus;1) &rarr; Daily TRANSITION (0) &rarr; Weekly RISK-ON (+2)</b>, with daily breadth at <b>&minus;0.61</b> and every non-tech sector lagging (relative trend &#9660;&#9660;). The 14:25 note read pure price and called it bullish across the board; the same price, with internals attached, is a <em>narrow</em> melt-up. This is the single biggest change and it argues for fading strength rather than chasing it. <span class="conf c-high">High</span></li>
+    <li><b>MenthorQ gamma now renders QQQ <em>and</em> VIX levels.</b> At 14:25 gamma was SPY-only. Now QQQ is pinned on its <span class="lvl">730</span> wall (1D band <span class="lvl">715.91&ndash;734.71</span>) and VIX on its <span class="lvl">17</span> wall (1D band <span class="lvl">15.54&ndash;18.14</span>). Execution levels now exist for all three names. <span class="conf c-high">High</span></li>
+    <li><b>Intraday credit-stress flag.</b> The Monitor prints credit risk <b>&minus;0.80</b> and two market conflicts ("credit stress; cyclical bounce inside weak regime") at the 15m horizon — a caution flag that simply did not exist in the prior briefing's dataset. Note this <em>reverses</em> by the daily (credit +1.56), so it is a short-term, not structural, stress. <span class="conf c-mod">Moderate</span></li>
+    <li><b>Price is flat over the 12 minutes.</b> SPY 750.79 (unch.), QQQ 730.73 (unch.), VIX 17.00 (unch.). No price-structure break; the change in tone is driven entirely by newly-visible internals, not by tape movement. <span class="conf c-high">High</span></li>
+    <li><b>ELA loaded but silent; MA study silent.</b> The ELA Fractal Volatility Projector is on the layout this run (it was flagged absent at 14:25) but returned no readable output — so it still contributes nothing quotable. "Moving Averages For All Timeframes" likewise returned no values this run, so MA stacks are not cited (the 14:25 note had them; they are not re-quoted here to avoid carrying stale numbers). <span class="conf c-mod">Moderate</span></li>
+  </ul>
+  <p><b>Single most important change:</b> the newly-loaded Sector Leadership Monitor exposes a <b>narrow, breadth-deteriorating, intraday-STRESS regime beneath an index at all-time highs</b> — Technology is the only leading sector and all ten others are lagging. The 14:25 "buy every dip" framing is downgraded to "hold core longs, fade the pins, hedge the stress."</p>
+</section>
+
+<!-- ===================== ACTIONABLE STEPS ===================== -->
+<section>
+  <h2>Actionable Steps — Trader's Perspective</h2>
+
+  <div class="step">
+    <div class="hd"><span>1 &middot; Don't chase the highs — the rally is one sector wide</span><span class="conf c-high">High</span></div>
+    Daily breadth is <span class="lvl">&minus;0.61</span> and 10 of 11 sectors lag with &#9660;&#9660; relative trend; only Technology leads. Keep index beta <b>concentrated in QQQ/tech</b> (the only place the engine confirms leadership) and resist adding broad SPY exposure into 750. New longs are entries on pullbacks to support, not breakouts into the wall.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>2 &middot; SPY — fade the 750 gamma pin; only chase a confirmed break</span><span class="conf c-mod">Moderate</span></div>
+    SPY is on the <span class="lvl">750.00</span> Call/Gamma Wall 0DTE — these pin and cap via dealer hedging. <b>Trim scalp longs into 750&ndash;751.67; do not chase.</b> Long trigger only on a decisive 15m close above PM-high <span class="lvl">751.67</span> &rarr; target <span class="lvl">756.31</span> (1D Max), stop back below 750. Rejection &rarr; drift to <span class="lvl">746</span> (HVL 0DTE) / <span class="lvl">745</span> (Put Support 0DTE).
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>3 &middot; QQQ — the core long; buy the shelf, not the wall</span><span class="conf c-mod">Moderate&ndash;High (trend) / Moderate (entry)</span></div>
+    QQQ (+8.24%/4wk, tech leadership confirmed) is the preferred vehicle. It is pinned at its <span class="lvl">730</span> wall with 1D-Max <span class="lvl">734.71</span> just above. Buy pullbacks into <span class="lvl">726.65</span> (PM-high, now support) / <span class="lvl">722.12</span> (PDH) while price holds; stop below PM-low <span class="lvl">721.18</span>. A clean break of 730 opens 734.71. Concentrating here is correct <em>and</em> a concentration risk — size accordingly.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>4 &middot; Hedge — VIX 17 is cheap convexity against thin breadth</span><span class="conf c-mod">Moderate</span></div>
+    With indices at highs, both pinned at call walls, and breadth hollowing, downside insurance is cheap (VIX 17.00, 1D band 15.54&ndash;18.14). Favor <b>SPY/QQQ put spreads or VIX calls</b> over naked short-vol. The credit-stress flag (&minus;0.80 intraday) is the reason to own the hedge now rather than after the fact. Expansion trigger: VIX &gt; 18.14 then 19.44.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>5 &middot; Standing invalidation / risk lines</span><span class="conf c-high">High</span></div>
+    Bull thesis holds while <b>SPY &gt; 743.11 (1D Min) and the 739 HVL flip</b>, <b>QQQ &gt; 715.91 (1D Min)</b>, and <b>VIX &lt; 18.14</b>. A daily SPY close below 739 <em>plus</em> a VIX hold above 18.14 together is the first genuine structural crack. Equally, watch the regime ladder: if the <b>daily</b> regime drops from 0 (Transition) into negative, that is the breadth deterioration confirming into the trend horizon — de-risk on that, not on price alone.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>6 &middot; Process — fix ELA and the MA study before next run</span><span class="conf c-high">High</span></div>
+    ELA Fractal Volatility Projector and "Moving Averages For All Timeframes" are on the layout but returned no readable data this run — so vol-projection bands and explicit MA stacks were unavailable. Confirm these studies are visible and plotting (and that MenthorQ stays multi-symbol) before the next scheduled briefing for complete vol/trend context. The Breadth/Cross-Asset Cockpit, Stan Alpha v3, Markov Regime and Choppiness Index remain off this layout entirely.
+  </div>
+</section>
+
+<footer>
+  <b>Sources</b> (live TradingView Desktop, read via CDP, 2026-05-27 14:37 local). Regime/breadth/sector leadership: "Institutional Sector Leadership Monitor" (SPY-keyed, recomputed per chart resolution; confidence &amp; DQ as printed). Gamma walls &amp; 1D vol bands: "MenthorQ Gamma Levels Intraday" (renders SPY, QQQ and VIX at 15m; blank at 4H/D/W). Price/levels: chart OHLCV, "Premarket High/Low (Today Only)", "Previous days highs and lows". VIX level: TVC:VIX quote. <br>
+  Dashboards on the layout but returning <b>no readable output</b> this run: ELA Fractal Volatility Projector, Moving Averages For All Timeframes (hence no ELA bands / no MA stacks quoted). Dashboards named in the spec but <b>absent from this layout</b>: Stan Alpha v3, Institutional US Breadth + Cross-Asset Cockpit, Institutional ATR + Block Flow + Markov Regime Engine, Choppiness Index and RSI. No values were invented for absent or blank dashboards. <br>
+  Scope: SPY / QQQ / VIX only (per mandate). Confidence tags reflect signal alignment, not guarantees. Gamma-pin behavior is probabilistic. For internal desk use — not investment advice. Run type: <b>Ad-hoc</b>.
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Desk Briefing — SPY / QQQ / VIX — 2026-05-27 14:25 (Ad-hoc)</title>
+<style>
+  :root{
+    --navy:#0b1f3a; --navy2:#13294b; --gold:#c9a227; --gold2:#e6c976;
+    --ink:#1a2230; --paper:#f7f5ef; --line:#d8d2c2; --muted:#6a7280;
+    --bull:#1f7a4d; --bear:#a3282b; --neutral:#8a6d1f;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;line-height:1.5;font-size:15px;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 0 60px;background:#fff;
+    box-shadow:0 0 40px rgba(0,0,0,.08);}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:#fff;padding:28px 40px;border-bottom:4px solid var(--gold);}
+  header .firm{font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold2);font-family:Arial,Helvetica,sans-serif;}
+  header h1{margin:6px 0 2px;font-size:25px;font-weight:600;letter-spacing:.5px;}
+  header .sub{font-size:13px;color:#c9d2e0;font-family:Arial,Helvetica,sans-serif;}
+  .stamp{display:inline-block;margin-top:10px;background:var(--gold);color:var(--navy);
+    font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:2px;}
+  .stamp.adhoc{background:#b7472a;color:#fff;}
+  section{padding:24px 40px;border-bottom:1px solid var(--line);}
+  h2{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--navy);border-left:4px solid var(--gold);
+    padding-left:12px;margin:0 0 16px;}
+  h3{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--navy);margin:22px 0 6px;}
+  .exec{background:var(--navy);color:#eef2f8;border:none;border-top:3px solid var(--gold);}
+  .exec h2{color:var(--gold2);border-left-color:var(--gold);}
+  .exec p{margin:8px 0;}
+  .exec .call{font-size:17px;font-weight:600;color:#fff;}
+  .exec .call b{color:var(--gold2);}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);
+    vertical-align:top;}
+  th{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--muted);background:#faf8f2;}
+  tbody tr:nth-child(even){background:#fbfaf6;}
+  td.lbl{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--muted);width:120px;background:#faf8f2;}
+  .tag{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10px;
+    font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;
+    border-radius:10px;color:#fff;}
+  .bull{background:var(--bull);} .bear{background:var(--bear);} .neutral{background:var(--neutral);}
+  .conf{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;
+    letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid;}
+  .c-high{color:var(--bull);border-color:var(--bull);background:#eaf5ef;}
+  .c-mod{color:var(--neutral);border-color:var(--neutral);background:#fbf4dd;}
+  .c-low{color:var(--muted);border-color:var(--muted);background:#f0f0f0;}
+  ul{margin:6px 0 6px 0;padding-left:20px;}
+  li{margin:8px 0;}
+  .lvl{font-family:"Courier New",monospace;font-weight:700;}
+  .step{border-left:3px solid var(--gold);padding:10px 14px;margin:12px 0;background:#faf8f2;}
+  .step .hd{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:13px;
+    color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .note{font-size:12px;color:var(--muted);font-style:italic;}
+  .warn{background:#fbf0ec;border-left:3px solid #b7472a;padding:10px 14px;margin:12px 0;font-size:13px;}
+  footer{padding:20px 40px;font-size:11px;color:var(--muted);
+    font-family:Arial,Helvetica,sans-serif;line-height:1.6;}
+  .pos{color:var(--bull);font-weight:700;} .neg{color:var(--bear);font-weight:700;}
+  .gw{font-family:"Courier New",monospace;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="firm">Institutional Trading Desk &middot; Cross-Asset Research</div>
+  <h1>Multi-Timeframe Desk Briefing — SPY / QQQ / VIX</h1>
+  <div class="sub">Wednesday, May 27, 2026 &middot; 14:25 local &middot; Core index complex &middot; Live TradingView Desktop (CDP)</div>
+  <span class="stamp adhoc">Ad-hoc Run</span>
+</header>
+
+<section class="exec">
+  <h2>Executive Summary</h2>
+  <p class="call">Headline: <b>Risk-on, dip-buy tape.</b> SPY and QQQ are bullish on <b>every</b> timeframe (15m &rarr; weekly), VIX is suppressed at <b>17.00</b> and below all its higher-timeframe averages. The one near-term governor is mechanical: <b>SPY is pinned exactly at the 750.00 0DTE Call/Gamma Wall</b>.</p>
+  <p>Price structure is unambiguous: SPY 750.79 and QQQ 730.73 trade above their 4H, daily and weekly moving-average stacks. QQQ is the leadership vehicle — up <b>+8.24% over the trailing 4 weeks</b> vs SPY's +4.24% — and on the 15m it has already broken above both its prior-day high (722.12) and premarket high (726.65). VIX falling (4H ROC &minus;4.10, daily ROC &minus;16.19) confirms the risk-on backdrop.</p>
+  <p>The actionable nuance is the MenthorQ gamma map, which renders at 15m: SPY sits <em>on</em> the 750.00 Call Resistance / Gamma Wall 0DTE. That level tends to pin. A clean 15m close above the premarket high <span class="lvl">751.67</span> opens the 1D-Max <span class="lvl">756.31</span>; failure here drifts back to the <span class="lvl">746</span> HVL-0DTE / <span class="lvl">745</span> Put-Support-0DTE shelf. The bull thesis only cracks below the <span class="lvl">739</span> HVL gamma-flip.</p>
+  <div class="warn">
+    <b>Data &amp; scope caveat.</b> The active chart layout carries <b>MenthorQ Gamma (Intraday/EOD)</b>, <b>VIX Statistical Sentiment Index [Nasan]</b>, <b>Moving Averages For All Timeframes</b>, and the premarket / prior-day level studies — but <b>not</b> the ELA Fractal Volatility Projector, Stan Alpha v3, Institutional US Breadth + Cross-Asset Cockpit, or Markov Regime engine named in the briefing spec. Breadth, cross-asset regime scores, and ELA vol-projection bands are therefore <b>unavailable this run</b> and are not quoted. MenthorQ gamma is configured for <b>SPY only</b> on this layout — no QQQ or VIX gamma levels rendered. Figures below are exactly as read; nothing is inferred where a dashboard returned blank.
+  </div>
+</section>
+
+<!-- ===================== SPY ===================== -->
+<section>
+  <h2>SPY — State Street SPDR S&amp;P 500 ETF &middot; Last 750.79</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Bias</td>
+        <td><span class="tag bull">Bullish — pinned</span></td>
+        <td><span class="tag bull">Bullish</span></td>
+        <td><span class="tag bull">Uptrend</span></td>
+        <td><span class="tag bull">Strong uptrend</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Trend (MAs)</td>
+        <td>Above intraday MAs <span class="lvl">749.21 / 748.78</span></td>
+        <td>Above 4H MAs <span class="lvl">733.54 / 729.71</span></td>
+        <td>Above daily MAs <span class="lvl">703.86 / 699.26 / 738.68</span></td>
+        <td>Above weekly MAs <span class="lvl">649.32 / 634.50 / 707.72</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>O750.46 H751.00 L749.61 C750.79; sitting on 750 wall</td>
+        <td>30-bar range <span class="lvl">731.54&ndash;752.12</span>, +0.21%, near top</td>
+        <td>5d climb 733.73&rarr;741.25&rarr;742.72&rarr;745.64&rarr;750.59 (+1.86%)</td>
+        <td>4wk closes 737.62&rarr;739.17&rarr;745.64&rarr;750.59 (+4.24%); pressing 752.13</td>
+      </tr>
+      <tr>
+        <td class="lbl">Gamma walls<br>(MenthorQ 15m)</td>
+        <td colspan="1" class="gw">
+          1D Max <span class="lvl">756.31</span><br>
+          <b>Call Res / Gamma Wall 0DTE <span class="lvl">750.00</span></b> &larr; price here<br>
+          HVL 0DTE <span class="lvl">746.00</span><br>
+          Put Support 0DTE <span class="lvl">745.00</span><br>
+          1D Min <span class="lvl">743.11</span><br>
+          HVL flip <span class="lvl">739.00</span><br>
+          Put Support <span class="lvl">730.00</span>
+        </td>
+        <td colspan="3" class="note">MenthorQ Gamma is an intraday/EOD study — rendered no lines/labels at 4H, Daily or Weekly (consistent across the sweep). ELA vol bands: not on this layout (none rendered at any timeframe).</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PM H/L <span class="lvl">751.67 / 748.68</span>; PDH/PDL <span class="lvl">748.94 / 744.48</span></td>
+        <td>4H high <span class="lvl">752.12</span></td>
+        <td>Daily range <span class="lvl">731.53&ndash;752.13</span></td>
+        <td>4wk range <span class="lvl">714.99&ndash;752.13</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Vol / VIX read</td>
+        <td>VIX-SPX corr &minus;0.83 (reliab 0.81)</td>
+        <td>VIX ROC &minus;4.10 (falling)</td>
+        <td>VIX ROC &minus;17.76 (falling)</td>
+        <td>VIX ROC &minus;1.84</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: SPY is structurally long on all horizons; the only thing standing on its head is the 750.00 0DTE call/gamma wall. Treat 750&ndash;751.67 as the decision band — through it, 756.31 is the magnet; rejected, 746/745 then the 739 flip.</p>
+</section>
+
+<!-- ===================== QQQ ===================== -->
+<section>
+  <h2>QQQ — Invesco QQQ Trust &middot; Last 730.73</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Bias</td>
+        <td><span class="tag bull">Bullish — breakout</span></td>
+        <td><span class="tag bull">Bullish</span></td>
+        <td><span class="tag bull">Uptrend (leader)</span></td>
+        <td><span class="tag bull">Strong uptrend</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Trend (MAs)</td>
+        <td>Above intraday MAs <span class="lvl">726.60 / 725.58</span></td>
+        <td>Above 4H MAs <span class="lvl">699.04 / 692.67</span></td>
+        <td>Above daily MAs <span class="lvl">650.59 / 643.55 / 707.80</span></td>
+        <td>Above weekly MAs <span class="lvl">583.89 / 567.30 / 658.20</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>730.73; broke above PDH 722.12 &amp; PM-high 726.65</td>
+        <td>30-bar range <span class="lvl">695.26&ndash;731.17</span>, +1.29%, at top</td>
+        <td>5d climb 701.53&rarr;713.15&rarr;714.51&rarr;717.54&rarr;730.28 (+3.11%)</td>
+        <td>4wk closes 711.23&rarr;708.93&rarr;717.54&rarr;730.28 (<b>+8.24%</b>)</td>
+      </tr>
+      <tr>
+        <td class="lbl">Gamma walls</td>
+        <td colspan="4" class="note">MenthorQ Gamma rendered <b>no QQQ levels</b> — the study on this layout is keyed to SPY. No QQQ gamma walls / ELA vol bands available this run. Size QQQ off price structure (PM/PDH levels), not gamma.</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PM H/L <span class="lvl">726.65 / 721.18</span>; PDH/PDL <span class="lvl">722.12 / 715.95</span></td>
+        <td>4H high <span class="lvl">731.17</span></td>
+        <td>Daily range <span class="lvl">695.25&ndash;731.17</span></td>
+        <td>4wk range <span class="lvl">668.90&ndash;731.17</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: QQQ is the cleanest long in the complex — leadership confirmed by the +8.24% trailing-4-week return and an intraday breakout above both PM-high and PDH. Former resistance 726.65 / 722.12 now act as the support shelf.</p>
+</section>
+
+<!-- ===================== VIX ===================== -->
+<section>
+  <h2>VIX — CBOE Volatility Index (S&amp;P 500) &middot; Last 17.00</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Execution &middot; 15m</th><th>Short &middot; 4H</th><th>Medium &middot; 5D (Daily)</th><th>Monthly &middot; 20D (Weekly)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lbl">Bias (vol)</td>
+        <td><span class="tag neutral">Benign — mild firm</span></td>
+        <td><span class="tag bull">Vol downtrend</span></td>
+        <td><span class="tag bull">Vol downtrend</span></td>
+        <td><span class="tag neutral">Suppressed / range</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Level vs MAs</td>
+        <td>17.00 &asymp; intraday MAs <span class="lvl">16.91 / 16.93</span></td>
+        <td>Below 4H MAs <span class="lvl">17.92 / 18.17</span></td>
+        <td>Below daily MAs <span class="lvl">19.42 / 19.44 / 17.49</span></td>
+        <td>Below weekly MAs <span class="lvl">18.78 / 18.66 / 19.26</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Price action</td>
+        <td>15m range 16.77&ndash;17.23 (+1.19%); ROC <span class="lvl">+0.80</span> mild uptick</td>
+        <td>30-bar range 16.46&ndash;19.44 (&minus;4.97%)</td>
+        <td>5d 18.05&rarr;17.43&rarr;16.75&rarr;16.71&rarr;17.00 (&minus;9.43%)</td>
+        <td>4wk 17.18&rarr;18.42&rarr;16.71&rarr;17.00 (&minus;2.19%)</td>
+      </tr>
+      <tr>
+        <td class="lbl">Key levels</td>
+        <td>PDH/PDL <span class="lvl">17.39 / 16.46</span>; PM <span class="lvl">16.86 / 16.56</span></td>
+        <td>Spike pivot <span class="lvl">19.44</span></td>
+        <td>Band <span class="lvl">16.46&ndash;19.44</span></td>
+        <td>Band <span class="lvl">16.18&ndash;19.44</span></td>
+      </tr>
+      <tr>
+        <td class="lbl">Equity gamma</td>
+        <td colspan="4" class="note">VIX is an index — MenthorQ gamma and equity-only level studies correctly returned blank. Only the VIX Statistical Sentiment Index and MA stack apply.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Read: 17.00 is a low-volatility, complacent regime — VIX is below its 4H/daily/weekly MAs and bleeding lower. The only flicker is a +0.80 15m ROC and yesterday's 17.39 high. No expansion signal; the spike pivot to watch is 19.44 (recent high). VIX reclaiming &gt;18 would be the first corroborating risk-off tell.</p>
+</section>
+
+<!-- ===================== MATERIAL CHANGES ===================== -->
+<section>
+  <h2>Material Changes Since Last Briefing</h2>
+  <p class="note">Prior file on disk: <b>briefing_20260527_1353.html</b> (today, 13:53 — a single-name note on <b>BDX</b>, generated from an "Institutional Sector Leadership Monitor" dashboard that is <b>not present</b> on the current layout). The two runs read different instruments and different dashboards, so regime/breadth scores are not directly comparable; the diff below is limited to what is comparable and what materially changed.</p>
+  <ul>
+    <li><b>Gamma is now actionable.</b> The 13:53 run explicitly could not render MenthorQ gamma or ELA (it sat on 4H/D/W). This 15m pass <b>does</b> render the SPY gamma map — Call/Gamma Wall 0DTE <span class="lvl">750.00</span>, 1D-Max <span class="lvl">756.31</span>, HVL flip <span class="lvl">739</span>, Put Support <span class="lvl">730</span>. Execution levels that did not exist last run now anchor the trade. <span class="conf c-high">High</span></li>
+    <li><b>VIX 17.19 &rarr; 17.00.</b> Marginally lower; regime unchanged — benign, sub-18, below every higher-timeframe MA. No volatility regime change. <span class="conf c-high">High</span></li>
+    <li><b>SPY ~750.45 &rarr; 750.79; broad tape reads more uniformly bullish.</b> The 13:53 sector monitor flagged a 4H RISK-OFF cooling inside a weekly RISK-ON. This run's raw index price structure is bullish on <b>all four</b> timeframes for both SPY and QQQ (price above 4H/D/W MA stacks). Caveat: different dashboards drive the two reads — the change in tone partly reflects the absent regime monitor, not only price. <span class="conf c-mod">Moderate</span></li>
+    <li><b>Leadership re-confirmed in QQQ.</b> The prior note tagged Technology the lone sector leader; this run quantifies it — QQQ +8.24% / 4wk vs SPY +4.24%, with an intraday breakout above PDH and PM-high. <span class="conf c-high">High</span></li>
+    <li><b>Dashboard set changed between runs.</b> ELA, Stan Alpha v3, Breadth Cockpit, Markov Regime and the Sector Leadership Monitor are no longer on the active layout. Cross-asset regime / breadth context is unavailable this run (was the backbone of the 13:53 note). <span class="conf c-high">High</span></li>
+  </ul>
+  <p><b>Single most important change:</b> MenthorQ gamma now renders at 15m and puts <b>SPY exactly on the 750.00 0DTE Call/Gamma Wall</b> — the pin and the decision level that did not exist in the prior briefing.</p>
+</section>
+
+<!-- ===================== ACTIONABLE STEPS ===================== -->
+<section>
+  <h2>Actionable Steps — Trader's Perspective</h2>
+
+  <div class="step">
+    <div class="hd"><span>1 &middot; SPY — respect the 750 gamma pin; trade the break, not the wall</span><span class="conf c-mod">Moderate</span></div>
+    SPY is on the <span class="lvl">750.00</span> Call Resistance / Gamma Wall 0DTE. 0DTE walls tend to pin and cap upside via dealer hedging. <b>Trim scalp longs into 750</b>; do not chase. A decisive 15m close above the PM-high <span class="lvl">751.67</span> is the trigger long, target <span class="lvl">756.31</span> (1D Max), stop back below 750. Rejection at 750 &rarr; expect a drift to <span class="lvl">746</span> (HVL 0DTE).
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>2 &middot; SPY — trend dip-buy at the gamma support shelf</span><span class="conf c-high">High (trend) / Moderate (entry)</span></div>
+    Structure is long on all horizons. Buy pullbacks into <span class="lvl">746</span> (HVL 0DTE) / <span class="lvl">745</span> (Put Support 0DTE), stop below <span class="lvl">743.11</span> (1D Min). Target 750 reclaim then 756.31. <b>Invalidation:</b> a daily close below <span class="lvl">739</span> (HVL flip) turns intraday gamma negative — stand down below there.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>3 &middot; QQQ — leadership long / breakout continuation</span><span class="conf c-mod">Moderate–High</span></div>
+    QQQ is the preferred beta vehicle (+8.24%/4wk, intraday breakout above PDH 722.12 &amp; PM-high 726.65). Buy pullbacks to <span class="lvl">726.65</span> (now support) / <span class="lvl">722.12</span> while price holds above; stop below PM-low <span class="lvl">721.18</span>. No gamma map for QQQ this run — size off price structure, keep risk defined. Rotate index beta toward QQQ over SPY for trend exposure.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>4 &middot; Hedge — VIX 17 is cheap convexity, not a short-vol invite</span><span class="conf c-mod">Moderate</span></div>
+    With indices at highs, SPY pinned at a call wall, and VIX 17.00 below all higher-TF MAs, downside insurance is cheap. Favor <b>SPY/QQQ put spreads or VIX call hedges</b> over naked short-vol. The spike target if SPY loses 743/739 is the recent VIX high <span class="lvl">19.44</span>; a VIX reclaim &gt;18 is the early tell to de-risk.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>5 &middot; Standing invalidation / risk line</span><span class="conf c-high">High</span></div>
+    The risk-on thesis holds while <b>SPY &gt; 743.11 (1D Min)</b> and the <b>739 HVL flip</b>, and <b>VIX &lt; its 4H MA (~18)</b>. A daily SPY close below 739 plus a VIX reclaim above 18 together would be the first genuine structural crack — until both fire, dips are buys.
+  </div>
+
+  <div class="step">
+    <div class="hd"><span>6 &middot; Process — restore the institutional layout before next run</span><span class="conf c-high">High</span></div>
+    This run had no ELA vol-projection bands, no Breadth/Cross-Asset Cockpit, no Markov regime, no Stan Alpha, and no Sector Leadership Monitor — they are not on the active layout (which is MenthorQ + VIX-sentiment centric). Breadth and cross-asset regime are blind spots this briefing. Load the full institutional layout (and confirm MenthorQ gamma is configured per-symbol, not SPY-only) before the next scheduled run for complete regime context.
+  </div>
+</section>
+
+<footer>
+  <b>Sources</b> (live TradingView Desktop, read via CDP, 2026-05-27 14:25 local). Prices/levels: chart OHLCV, "Premarket High/Low (Today Only)", "Previous days highs and lows". Gamma walls: "MenthorQ Gamma Levels Intraday" (SPY only; renders at 15m, blank at 4H/D/W). Trend: "Moving Averages For All Timeframes" (recomputed per resolution). Vol sentiment: "VIX Statistical Sentiment Index [Nasan]". VIX level: TVC:VIX quote. <br>
+  Dashboards named in the briefing spec but <b>absent from the active layout</b> and therefore not cited: ELA Fractal Volatility Projector, Stan Alpha v3, Institutional US Breadth + Cross-Asset Cockpit, Institutional ATR + Block Flow + Markov Regime Engine, Choppiness Index and RSI, Institutional Sector Leadership Monitor. No values were invented for absent dashboards. <br>
+  Scope: SPY / QQQ / VIX only (per mandate). Confidence tags reflect signal alignment, not guarantees. Gamma-pin behavior is probabilistic. For internal desk use — not investment advice. Run type: <b>Ad-hoc</b>.
+</footer>
+
+</div>
+</body>
+</html>
